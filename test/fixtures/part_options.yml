@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+# == Schema Information
+#
+# Table name: part_options
+#
+#  id                                           :bigint           not null, primary key
+#  deleted_at(Soft deleted timestamp)           :datetime
+#  name(The name of the option)                 :string           not null
+#  price(The price of the option)               :decimal(8, 2)    default(0.0), not null
+#  created_at                                   :datetime         not null
+#  updated_at                                   :datetime         not null
+#  part_id(The part that the option belongs to) :bigint           not null
+#
+# Indexes
+#
+#  index_part_options_on_part_id  (part_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (part_id => parts.id)
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
