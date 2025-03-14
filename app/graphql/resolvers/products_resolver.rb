@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Resolvers
-  class ProductsResolver < ::Resolvers::BaseResolver
-    type Types::ProductType.connection_type, null: false
+  class AllProductsResolver < ::Resolvers::BaseResolver
+    type [ Types::ProductType ], null: false
 
     def resolve
-      ::Product.all.includes(:category)
+      ::Product.not_deleted.includes(:category)
     end
   end
 end
