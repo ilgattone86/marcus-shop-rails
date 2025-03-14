@@ -15,8 +15,5 @@
 #  created_at                                   :datetime         not null
 #  updated_at                                   :datetime         not null
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+bicycle:
+  name: 'bicycle'

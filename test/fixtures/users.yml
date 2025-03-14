@@ -14,10 +14,6 @@
 #
 #  index_users_on_email_address  (email_address) UNIQUE
 #
-one:
-  email_address: one@example.com
-  password_digest: <%= password_digest %>
-
-two:
-  email_address: two@example.com
+first_user:
+  email_address: first_user@example.com
   password_digest: <%= password_digest %>

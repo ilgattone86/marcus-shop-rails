@@ -12,6 +12,7 @@
 #  deleted_at(Soft deleted timestamp)           :datetime
 #  name(The name of the option)                 :string           not null
 #  price(The price of the option)               :decimal(8, 2)    default(0.0), not null
+#  stock                                        :boolean          default(TRUE), not null
 #  created_at                                   :datetime         not null
 #  updated_at                                   :datetime         not null
 #  part_id(The part that the option belongs to) :bigint           not null
@@ -24,8 +25,14 @@
 #
 #  fk_rails_...  (part_id => parts.id)
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+road_wheels:
+  name: road wheels
+  price: 100.0
+  part: wheels
+  stock: true
+
+eight_speed_chain:
+  name: 8-speed chain
+  price: 50.0
+  part: chain
+  stock: true

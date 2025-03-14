@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_11_142656) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_14_213525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -29,6 +29,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_142656) do
     t.datetime "deleted_at", comment: "Soft deleted timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "stock", default: true, null: false
     t.index ["part_id"], name: "index_part_options_on_part_id"
   end
 
@@ -101,14 +102,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_142656) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
-  create_table "stocks", force: :cascade do |t|
-    t.bigint "part_option_id", null: false, comment: "The part option that the stock belongs to"
-    t.integer "number_of_units", default: 0, null: false, comment: "The number of units in stock"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["part_option_id"], name: "index_stocks_on_part_option_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email_address", null: false
     t.string "password_digest", null: false
@@ -128,5 +121,4 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_142656) do
   add_foreign_key "restrictions", "part_options", column: "blocked_option_id"
   add_foreign_key "restrictions", "part_options", column: "dependent_option_id"
   add_foreign_key "sessions", "users"
-  add_foreign_key "stocks", "part_options"
 end

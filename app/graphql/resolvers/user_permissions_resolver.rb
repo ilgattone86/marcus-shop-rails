@@ -7,7 +7,7 @@ module Resolvers
 
     type [ Types::PermissionType ], null: false
 
-    def resolve(email:, permissions:)
+    def resolve(email:, permissions: nil)
       ::Permission.for_user_email(email).filter_for_permission_name(permissions)
     end
   end

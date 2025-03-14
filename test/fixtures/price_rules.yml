@@ -25,8 +25,7 @@
 #  fk_rails_...  (base_option_id => part_options.id)
 #  fk_rails_...  (dependent_option_id => part_options.id)
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+first_price_rule:
+  base_option: road_wheels
+  dependent_option: eight_speed_chain
+  price_adjustment: 10.0

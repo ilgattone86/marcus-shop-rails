@@ -24,8 +24,7 @@
 #
 #  fk_rails_...  (category_id => categories.id)
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+first_bicycle:
+  name: My super bicycle
+  description: my super bicycle description
+  category: bicycle

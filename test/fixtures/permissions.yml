@@ -1,0 +1,12 @@
+# == Schema Information
+#
+# Table name: permissions
+#
+#  id         :bigint           not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+settings:
+  name: settings
+  users_with_permission: first_user

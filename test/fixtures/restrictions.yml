@@ -24,8 +24,6 @@
 #  fk_rails_...  (blocked_option_id => part_options.id)
 #  fk_rails_...  (dependent_option_id => part_options.id)
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+first_restriction:
+  dependent_option: road_wheels
+  blocked_option: eight_speed_chain
