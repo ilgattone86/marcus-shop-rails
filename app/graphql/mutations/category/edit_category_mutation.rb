@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
 module Mutations
-  class EditCategoryMutation < ::Mutations::BaseMutation
-    argument :id, ID, required: true
-    argument :name, String, required: true
+  module Category
+    class EditCategoryMutation < ::Mutations::BaseMutation
+      argument :category, ID, required: true, prepare: ->(category, _) { ::Category.find(category) }
+      argument :name, String, required: true
 
-    type Types::CategoryType
+      type ::Types::CategoryType
 
-    def resolve(id:, name:)
-      category = ::Category.find(id)
-      category.update!(name: name)
-      category
+      def resolve(category:, name:)
+        category.update!(name: name)
+
+        category
+      end
     end
   end
 end

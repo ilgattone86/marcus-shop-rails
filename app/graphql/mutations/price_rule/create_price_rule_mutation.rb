@@ -10,7 +10,9 @@ module Mutations
       type ::Types::PriceRuleType
 
       def resolve(price_adjustment:, base_option:, dependent_option:)
-        ::PriceRule.create!(price_adjustment: price_adjustment, base_option: base_option)
+        ::PriceRule.create!(base_option: base_option,
+                            dependent_option: dependent_option,
+                            price_adjustment: price_adjustment)
       end
     end
   end

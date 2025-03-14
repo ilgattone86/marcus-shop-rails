@@ -6,7 +6,7 @@ module Mutations
       argument :part_option, ID, required: true, prepare: ->(part_option, _) { ::PartOption.find(part_option) }
       argument :name, String, required: true
       argument :price, Float, required: true
-      argument :part, ID, required: true, prepare: ->(part, _) { ::PartOption.find(part) }
+      argument :part, ID, required: true, prepare: ->(part, _) { ::Part.find(part) }
 
       type Types::PartOptionType
 

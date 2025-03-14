@@ -3,8 +3,9 @@
 module Types
   class MutationType < Types::BaseObject
     # Category
-    field :edit_category, mutation: ::Mutations::EditCategoryMutation
-    field :create_category, mutation: ::Mutations::CreateCategoryMutation
+    field :edit_category, mutation: ::Mutations::Category::EditCategoryMutation
+    field :create_category, mutation: ::Mutations::Category::CreateCategoryMutation
+    field :delete_category, mutation: ::Mutations::Category::DeleteCategoryMutation
 
     # Product
     field :edit_product, mutation: ::Mutations::Product::EditProductMutation

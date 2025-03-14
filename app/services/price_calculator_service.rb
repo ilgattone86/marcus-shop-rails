@@ -22,9 +22,11 @@ class PriceCalculatorService
 
   def add_composed_price
     price_rules = ::PriceRule.for_base_option(@options)
+    options_ids = @options.map(&:id)
 
     price_rules.each do |price_rule|
-      next if @options.exclude?(price_rule.dependent_option_id)
+      option_pair = [ price_rule.base_option_id, price_rule.dependent_option_id ]
+      next if (option_pair - options_ids).present?
 
       @price += price_rule.price_adjustment
     end

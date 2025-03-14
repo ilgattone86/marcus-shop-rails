@@ -5,10 +5,12 @@ module Mutations
     class DeletePriceRuleMutation < ::Mutations::BaseMutation
       argument :price_rule, ID, required: true, prepare: ->(price_rule, _) { ::PriceRule.find(price_rule) }
 
-      type Boolean
+      type ::Types::PriceRuleType
 
       def resolve(price_rule:)
         price_rule.destroy
+
+        price_rule
       end
     end
   end

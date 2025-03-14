@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Resolvers
-  class AllProductsResolver < ::Resolvers::BaseResolver
+  class ProductsResolver < ::Resolvers::BaseResolver
     type [ Types::ProductType ], null: false
 
     def resolve

@@ -2,11 +2,11 @@
 
 module Resolvers
   class ProductResolver < ::Resolvers::BaseResolver
-    argument :product_id, ID, required: true
+    argument :product, ID, required: true, prepare: ->(product, _) { ::Product.find(product) }
 
     type Types::ProductType, null: false
-    def resolve(product_id:)
-      ::Product.find(product_id)
+    def resolve(product:)
+      product
     end
   end
 end

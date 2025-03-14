@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
 module Mutations
-  class CreateCategoryMutation < ::Mutations::BaseMutation
-    argument :name, String, required: true
+  module Category
+    class DeleteCategoryMutation < ::Mutations::BaseMutation
+      argument :category, ID, required: true, prepare: ->(category, _) { ::Category.find(category) }
 
-    type Types::CategoryType
+      type Types::CategoryType
 
-    def resolve(name:)
-      Category.create!(name: name)
+      def resolve(category:)
+        category.soft_delete
+
+        category
+      end
     end
   end
 end
