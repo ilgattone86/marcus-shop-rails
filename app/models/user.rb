@@ -17,7 +17,7 @@ class User < ApplicationRecord
   # Associations
   has_many :sessions, dependent: :destroy
   has_many :permission_users, dependent: :destroy
-  has_many :permissions, through: :permission_users, dependent: :destroy
+  has_many :permissions, through: :permission_users
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 
