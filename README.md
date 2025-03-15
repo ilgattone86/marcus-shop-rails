@@ -42,6 +42,7 @@ Part options are the options of a part. Each part has many part options, so a pa
 
 | id | name | deleted_at | stock | part_id | price |  
 |----|------|------------|-------|---------|-------|
+
 `stock` is a boolean that indicates if the part option is in stock or not; in this way Marcus can track the stock of each part option.
 `price` is the base price of the part option and should be greater than 0.
 
