@@ -3,7 +3,7 @@ require "test_helper"
 module Mutations
   module PriceRule
     class EditPriceRuleResolverTest < ActiveSupport::TestCase
-      test "should edit a part option" do
+      test "should edit a price rule" do
         ### Given
         mutation_string = <<-GRAPHQL
           mutation($priceRule: ID!, $priceAdjustment: Float!, $baseOption: ID!, $dependentOption: ID!) {
