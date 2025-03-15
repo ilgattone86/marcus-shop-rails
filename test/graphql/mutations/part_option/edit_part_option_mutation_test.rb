@@ -22,7 +22,7 @@ module Mutations
         road_wheels = part_options(:road_wheels)
         new_name = "foo"
         new_price = rand(100..1000)
-        new_stock = [true, false].sample
+        new_stock = [ true, false ].sample
         new_part = parts(:chain)
 
         variables = { name: new_name,

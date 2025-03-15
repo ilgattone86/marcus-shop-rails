@@ -6,5 +6,3 @@ module Mutations
     field_class GraphQL::Schema::Field
   end
 end
-
-

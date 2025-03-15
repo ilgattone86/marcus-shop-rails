@@ -16,7 +16,7 @@ module Resolvers
       bicycle = products(:first_bicycle)
 
       ### When
-      product_id = MarcusShopSchema.execute(query_string, variables: {product: bicycle.id}).dig("data", "product", "id")
+      product_id = MarcusShopSchema.execute(query_string, variables: { product: bicycle.id }).dig("data", "product", "id")
 
       ### Then
       assert_equal(bicycle.id.to_s, product_id)

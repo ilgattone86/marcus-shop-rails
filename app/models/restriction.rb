@@ -43,6 +43,11 @@ class Restriction < ApplicationRecord
 
   private
 
+  # Ensures that the restriction pair is unique, preventing duplicate or reversed entries.
+  #
+  # @return [void]
+  #
+  # @raise [ActiveRecord::RecordInvalid] if a restriction already exists in reverse order.
   def unique_restriction_pair
     exists_dependent_blocked = ::Restriction.for_dependent_blocked(dependent_option, blocked_option)
     exists_blocked_dependent = ::Restriction.for_dependent_blocked(blocked_option, dependent_option)
@@ -51,6 +56,11 @@ class Restriction < ApplicationRecord
     errors.add(:base, "This restriction already exists in reverse order") if exists_pair
   end
 
+  # Ensures that the dependent and blocked options belong to different parts.
+  #
+  # @return [void]
+  #
+  # @raise [ActiveRecord::RecordInvalid] if both options belong to the same part.
   def different_part
     return if dependent_option.part != blocked_option.part
 

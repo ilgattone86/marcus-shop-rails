@@ -26,6 +26,4 @@ class Product < ApplicationRecord
 
   has_many :product_parts, dependent: :destroy
   has_many :parts, through: :product_parts, dependent: :destroy
-
-
 end

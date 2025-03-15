@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class PriceCalculatorService
-
   def initialize(options)
     @price = 0.0
     @options = ::PartOption.find(options)

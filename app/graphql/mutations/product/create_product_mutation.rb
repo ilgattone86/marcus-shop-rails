@@ -11,7 +11,7 @@ module Mutations
       type Types::ProductType
 
       def resolve(name:, category:, parts:, description: nil)
-        ::Product.create!(name: name, description:description, category: category, parts: parts)
+        ::Product.create!(name: name, description: description, category: category, parts: parts)
       end
     end
   end

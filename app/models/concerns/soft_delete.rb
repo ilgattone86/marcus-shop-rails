@@ -4,7 +4,7 @@ module SoftDelete
   included do
     scope :not_deleted, -> { where(deleted_at: nil) }
     scope :deleted,     -> { where.not(deleted_at: nil) }
-    scope :for_deleted, -> (deleted_boolean) { deleted_boolean ? deleted : not_deleted }
+    scope :for_deleted, ->(deleted_boolean) { deleted_boolean ? deleted : not_deleted }
   end
 
   def restore

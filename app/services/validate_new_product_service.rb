@@ -22,5 +22,4 @@ class ValidateNewProductService
       end
     end
   end
-
 end

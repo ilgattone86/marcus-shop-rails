@@ -51,5 +51,3 @@ group :development, :test do
   # Annotate the models
   gem "annotaterb"
 end
-
-

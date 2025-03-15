@@ -29,7 +29,7 @@ module Resolvers
       user_email = user.email_address
 
       ### When
-      permissions_result = MarcusShopSchema.execute(query_string, variables: { email: user_email, permissions: ["settings"] })
+      permissions_result = MarcusShopSchema.execute(query_string, variables: { email: user_email, permissions: [ "settings" ] })
       permissions = permissions_result.dig("data", "userPermissions").map { |permission| permission["name"] }
 
       ### Then
