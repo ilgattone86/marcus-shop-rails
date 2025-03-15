@@ -24,6 +24,7 @@ class Restriction < ApplicationRecord
   belongs_to :blocked_option, class_name: "PartOption", inverse_of: :restrictions_as_blocked
 
   # Validations
+  validate :different_part
   validate :unique_restriction_pair
 
 
@@ -48,5 +49,11 @@ class Restriction < ApplicationRecord
 
     exists_pair = exists_dependent_blocked.or(exists_blocked_dependent).exists?
     errors.add(:base, "This restriction already exists in reverse order") if exists_pair
+  end
+
+  def different_part
+    return if dependent_option.part != blocked_option.part
+
+    errors.add(:base, "The dependent and blocked options must be from different parts")
   end
 end

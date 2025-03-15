@@ -36,3 +36,15 @@ eight_speed_chain:
   price: 50.0
   part: chain
   stock: true
+
+single_speed_chain:
+  name: Single-speed chain
+  price: 100.0
+  part: chain
+  stock: true
+
+mountain_wheels:
+  name: Mountain wheels
+  price: 120.0
+  part: wheels
+  stock: true

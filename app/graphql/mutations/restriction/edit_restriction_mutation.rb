@@ -3,9 +3,9 @@
 module Mutations
   module Restriction
     class EditRestrictionMutation < ::Mutations::BaseMutation
-      argument :dependent_option, ID, required: true, prepare: ->(dependent_option, _) { ::PartOption.find(dependent_option) }
       argument :restriction, ID, required: true, prepare: ->(restriction, _) { ::Restriction.find(restriction) }
       argument :blocked_option, ID, required: true, prepare: ->(blocked_option, _) { ::PartOption.find(blocked_option) }
+      argument :dependent_option, ID, required: true, prepare: ->(dependent_option, _) { ::PartOption.find(dependent_option) }
 
       type Types::RestrictionType
 
