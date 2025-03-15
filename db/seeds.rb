@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Create a user with the settings permission
+admin = ::User.create!(email_address: "admin@factorial.com", password: "password")
+admin.permissions << ::Permission.create!(name: "settings")

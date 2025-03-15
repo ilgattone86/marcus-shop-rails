@@ -187,7 +187,14 @@ They are more UI questions I think a simple demo of the Marcus shop would be the
 
 Please refer to the UI repo to see a small video of how the shop works.
 
-## Other notes:
+### How to run the project:
+1. Clone the repository
+2. Run `bundle install`
+3. Run `rails db:create db:migrate db:seed`
+4. Now you can run the server with `rails s`
+5. Run the UI project to see the shop in action.
+
+### Other notes:
 First of all, I'd like to spend few words on teh technology I choose for the challenge.
 
 I've been working with GraphQL for like 5 years now and I have to admit that the framework is very useful and helps you to cover most of the use cases.\
