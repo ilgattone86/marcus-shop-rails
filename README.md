@@ -207,8 +207,3 @@ Again, I want to highlight the importance of the soft delete approach, it is ver
 
 Another thing I would add to this project is a way to track the changes of the data, especially who made the change, a PaperTrail gem would be useful to track the changes of the data.
 
-### Final notes:
-I know that this project have a lot of missing features, I've tried to cover the most important parts of the project with the time I had.\
-I will be happy to discuss the project with you.
-
-
